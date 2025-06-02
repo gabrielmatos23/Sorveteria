@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Cabeçalho com configurações básicas e link para o CSS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorvete+ - Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- Barra de navegação com links para as páginas principais -->
+  <nav class="navbar">
+    <div class="logo">🍦 Sorvete+</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Dashboard</a></li>
+      <li><a href="cadastro.html">Cadastrar Produto</a></li>
+      <li><a href="estatistica.html">Estatísticas</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo principal exibindo a lista de produtos e busca -->
+  <main class="conteudo">
+    <section class="produtos-section">
+      <h2>Produtos Cadastrados</h2>
+      <!-- Campo para buscar produtos pelo nome -->
+      <input
+        type="search"
+        id="search-produtos"
+        placeholder="Buscar produtos pelo nome..."
+        aria-label="Buscar produtos"
+        autocomplete="off"
+      />
+      <!-- Container onde os produtos serão exibidos dinamicamente -->
+      <div id="lista-produtos" class="produtos-grid" aria-live="polite">
+        <!-- Produtos serão renderizados aqui -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal para edição dos dados de um produto selecionado -->
+  <div id="modal-editar" class="modal">
+    <div class="modal-conteudo">
+      <button class="fechar-modal">×</button>
+      <h2>Editar Produto</h2>
+      <form id="form-editar">
+        <input type="hidden" id="edit-id" />
+        
+        <label for="edit-nome">Nome:</label>
+        <input type="text" id="edit-nome" required />
+  
+        <label for="edit-tipo">Tipo:</label>
+        <select id="edit-tipo" required>
+          <option value="Pote">Pote</option>
+          <option value="Picolé">Picolé</option>
+          <option value="Casquinha">Casquinha</option>
+        </select>
+  
+        <label for="edit-categoria">Categoria:</label>
+        <select id="edit-categoria" required>
+          <option value="Frutado">Frutado</option>
+          <option value="Cremoso">Cremoso</option>
+          <option value="Diet">Diet</option>
+        </select>
+  
+        <label for="edit-preco">Preço:</label>
+        <input type="number" id="edit-preco" step="0.01" required />
+  
+        <label for="edit-estoque">Estoque:</label>
+        <input type="number" id="edit-estoque" required />
+  
+        <label for="edit-foto" class="custom-file-upload">Escolher imagem</label>
+        <input type="file" id="edit-foto" accept="image/*" style="display:none" />
+        <img id="edit-preview" style="display:none; max-width:100px; margin-top:10px;" />
+  
+        <button type="submit">Salvar Alterações</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script principal que controla as interações da página -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

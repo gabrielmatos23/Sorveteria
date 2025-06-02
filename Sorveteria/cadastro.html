@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Cabeçalho com metadados, título da página e link para o CSS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorvete+ - Cadastro de Produto</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- Navegação principal entre as páginas do sistema -->
+  <nav class="navbar">
+    <div class="logo">🍦 Sorvete+</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Dashboard</a></li>
+      <li><a href="cadastro.html" class="active">Cadastrar Produto</a></li>
+      <li><a href="estatistica.html">Estatísticas</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo principal contendo o formulário para cadastro de produtos -->
+  <main class="conteudo">
+    <h2 id="titulo-form">Cadastrar Produto</h2>
+    <form id="form-produto" class="formulario" aria-label="Formulário de Cadastro de Produto">
+      <!-- Campo para o nome do produto -->
+      <label>
+        Nome do Produto:
+        <input type="text" name="nome" id="nome" required />
+      </label>
+
+      <!-- Campo para selecionar o tipo do produto -->
+      <label>
+        Tipo:
+        <select name="tipo" id="tipo" required>
+          <option value="">Selecione...</option>
+          <option value="Pote">Pote</option>
+          <option value="Picolé">Picolé</option>
+          <option value="Casquinha">Casquinha</option>
+        </select>
+      </label>
+
+      <!-- Campo para selecionar a categoria do produto -->
+      <label>
+        Categoria:
+        <select name="categoria" id="categoria" required>
+          <option value="">Selecione...</option>
+          <option value="Frutado">Frutado</option>
+          <option value="Cremoso">Cremoso</option>
+          <option value="Diet">Diet</option>
+        </select>
+      </label>
+
+      <!-- Campo para informar o preço do produto -->
+      <label>
+        Preço (R$):
+        <input type="number" name="preco" id="preco" min="0" step="0.01" required />
+      </label>
+
+      <!-- Campo para informar a quantidade em estoque -->
+      <label>
+        Estoque:
+        <input type="number" name="estoque" id="estoque" min="0" required />
+      </label>
+
+      <!-- Campo para upload e pré-visualização da imagem do produto -->
+      <div class="input-foto-wrapper">
+        <label for="foto">Selecionar Imagem</label>
+        <input type="file" name="foto" id="foto" accept="image/*" />
+        <img id="preview" src="" alt="Prévia da imagem" />
+      </div>
+
+      <!-- Botão para enviar o formulário -->
+      <button type="submit">Salvar Produto</button>
+    </form>
+  </main>
+
+  <!-- Script modular que gerencia o cadastro dos produtos -->
+  <script type="module" src="assets/js/cadastro.js"></script>
+</body>
+</html>

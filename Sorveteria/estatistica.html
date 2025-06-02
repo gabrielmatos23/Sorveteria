@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Cabeçalho com metadados, título, link para CSS e biblioteca Chart.js -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorvete+ - Estatísticas</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Navbar para navegação entre as páginas do sistema -->
+  <nav class="navbar">
+    <div class="logo">🍦 Sorvete+</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Dashboard</a></li>
+      <li><a href="cadastro.html">Cadastrar Produto</a></li>
+      <li><a href="#" class="active" aria-current="page">Estatísticas</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo principal exibindo gráficos, resumo e tabela de produtos -->
+  <main class="conteudo">
+    <h2>📈 Estatísticas de Produtos</h2>
+
+    <!-- Seção contendo gráficos de estatísticas dos produtos -->
+    <section class="graficos">
+      <div class="grafico-container">
+        <h3>Quantidade por Tipo</h3>
+        <canvas id="graficoTipo" width="400" height="300"></canvas>
+      </div>
+
+      <div class="grafico-container">
+        <h3>Estoque por Categoria</h3>
+        <canvas id="graficoCategoria" width="400" height="300"></canvas>
+      </div>
+
+      <!-- Resumo com valor total do estoque -->
+      <div class="resumo">
+        <h3>💰 Valor Total em Estoque:</h3>
+        <p id="valorTotal">Carregando...</p>
+      </div>
+    </section>
+
+    <!-- Tabela exibindo os produtos cadastrados com detalhes e valores -->
+    <section class="tabela">
+      <h3 style="margin-top: 3rem;">📋 Produtos Cadastrados</h3>
+      <table class="tabela-estoque">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Tipo</th>
+            <th>Categoria</th>
+            <th>Preço (R$)</th>
+            <th>Estoque</th>
+            <th>Valor Total do Item (R$)</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaProdutos">
+          <!-- Conteúdo gerado por JS -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Script que carrega e gera as estatísticas e a tabela -->
+  <script src="assets/js/estatistica.js"></script>
+</body>
+</html>
